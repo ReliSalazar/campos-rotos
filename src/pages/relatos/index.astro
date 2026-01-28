@@ -1,6 +1,6 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import { relatos } from "../data/relatos.js";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { relatos } from "../../data/relatos.js";
 ---
 
 <BaseLayout>
@@ -9,13 +9,13 @@ import { relatos } from "../data/relatos.js";
       class="bg-card-bg/80 backdrop-blur-sm border border-border-color p-6 md:p-8 shadow-xl"
     >
       <h1 class="text-3xl font-bold text-primary-accent mb-8 text-center">
-        El Umbral del Polvo
+        Todos los Relatos
       </h1>
       <ul
-        class="space-y-6 max-h-[60vh] overflow-y-auto pr-2 pb-4 scrollbar-thin scrollbar-thumb-primary-accent scrollbar-track-card-bg"
+        class="space-y-6 max-h-80 overflow-y-auto pr-2 pb-4 scrollbar-thin scrollbar-thumb-primary-accent scrollbar-track-card-bg"
       >
         {
-          relatos.slice(0, 3).map((relato) => (
+          relatos.map((relato) => (
             <li class="group">
               <a
                 href={relato.url}
@@ -39,12 +39,6 @@ import { relatos } from "../data/relatos.js";
           ))
         }
       </ul>
-
-      <div class="mt-12 pt-6 border-t border-border-color text-center">
-        <p class="text-text-secondary text-sm">
-          Más relatos en desarrollo. Vuelve pronto para nuevas historias.
-        </p>
-      </div>
     </div>
   </div>
 </BaseLayout>
