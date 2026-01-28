@@ -4,33 +4,29 @@ import { relatos } from "../../data/relatos.js";
 ---
 
 <BaseLayout>
-  <div class="max-w-4xl mx-auto">
+  <div class="max-w-2xl mx-auto">
     <div
-      class="bg-card-bg/80 backdrop-blur-sm border border-border-color p-6 md:p-8 shadow-xl"
+      class="bg-[--bg-panel] border border-[--border] rounded-xl shadow-xl p-8 md:p-10"
     >
-      <h1 class="text-3xl font-bold text-primary-accent mb-8 text-center">
-        Todos los Relatos
-      </h1>
-      <ul
-        class="space-y-6 max-h-80 overflow-y-auto pr-2 pb-4 scrollbar-thin scrollbar-thumb-primary-accent scrollbar-track-card-bg"
-      >
+      <div class="chapter-title">Todos los Relatos</div>
+      <ul class="doc-frag space-y-6 max-h-80 overflow-y-auto pr-2 pb-4">
         {
           relatos.map((relato) => (
             <li class="group">
               <a
                 href={relato.url}
-                class="block p-4 transition-all duration-300 bg-card-bg/60 hover:bg-card-bg/80 border border-border-color hover:border-primary-accent/50 hover:shadow-lg hover:shadow-highlight"
+                class="block p-4 transition-all duration-300 bg-[--bg-main]/60 hover:bg-[--bg-main]/80 border border-[--border] hover:border-[--accent]/50 hover:shadow-lg"
               >
                 <div class="flex items-center justify-between">
                   <div>
-                    <h2 class="text-xl font-medium text-primary-accent group-hover:text-secondary-accent transition-colors">
+                    <h2 class="text-xl font-medium text-[--accent] group-hover:text-[--accent-strong] transition-colors">
                       {relato.titulo}
                     </h2>
-                    <p class="text-sm text-text-secondary mt-1">
+                    <p class="text-sm text-[--text-muted] mt-1">
                       {relato.subtitulo}
                     </p>
                   </div>
-                  <span class="text-secondary-accent opacity-0 group-hover:opacity-100 transition-opacity">
+                  <span class="text-[--accent-strong] opacity-0 group-hover:opacity-100 transition-opacity">
                     →
                   </span>
                 </div>

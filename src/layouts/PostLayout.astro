@@ -2,7 +2,7 @@
 import "../styles/global.css";
 import Header from "../components/Header.astro";
 
-const title = "Cenizas del Umbral | Relato";
+const title = "Campos Rotos | Capítulo";
 ---
 
 <!doctype html>
@@ -14,23 +14,17 @@ const title = "Cenizas del Umbral | Relato";
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body
-    class="min-h-screen bg-gradient-to-br from-darker-bg via-dark-bg to-darker-bg text-text-primary antialiased"
-  >
+  <body class="min-h-screen bg-[--bg-main] text-[--text-main] antialiased">
     <div class="min-h-screen flex flex-col">
       <Header />
-      <main
-        class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12"
-      >
-        <div class="max-w-3xl mx-auto w-full">
-          <div class="relative">
-            <div
-              class="relative bg-card-bg/80 backdrop-blur-sm border border-border-color p-6 md:p-10 shadow-xl max-h-[80vh] overflow-y-auto"
-            >
-              <article class="prose prose-invert max-w-none pb-4">
-                <slot />
-              </article>
-            </div>
+      <main class="grow container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+        <div class="max-w-2xl mx-auto w-full">
+          <div
+            class="bg-[--bg-panel] border border-[--border] rounded-xl shadow-xl p-6 md:p-10"
+          >
+            <article class="max-w-none pb-4">
+              <slot />
+            </article>
           </div>
         </div>
       </main>
