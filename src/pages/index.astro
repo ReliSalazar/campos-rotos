@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { relatos } from "../data/relatos.js";
+import { capitulos } from "../data/capitulos.js";
 ---
 
 <BaseLayout>
@@ -9,33 +9,40 @@ import { relatos } from "../data/relatos.js";
       class="bg-[--bg-panel] border border-[--border] rounded-xl shadow-xl p-8 md:p-10"
     >
       <div class="chapter-title">Campos Rotos</div>
-      <div class="subtitle">Novela de fantasía oscura serializada</div>
-      <ul class="doc-frag space-y-6 max-h-[60vh] overflow-y-auto pr-2 pb-4">
-        {
-          relatos.slice(0, 3).map((relato) => (
-            <li class="group">
-              <a
-                href={relato.url}
-                class="block p-4 transition-all duration-300 bg-[--bg-main]/60 hover:bg-[--bg-main]/80 border border-[--border] hover:border-[--accent]/50 hover:shadow-lg"
-              >
-                <div class="flex items-center justify-between">
-                  <div>
-                    <h2 class="text-xl font-medium text-[--accent] group-hover:text-[--accent-strong] transition-colors">
-                      {relato.titulo}
-                    </h2>
-                    <p class="text-sm text-[--text-muted] mt-1">
-                      {relato.subtitulo}
-                    </p>
+      <div class="subtitle">
+        En un mundo que se basa en el sacrificio, la perseverancia se convierte
+        en resistencia. Lenta, deliberada, con consecuencias.
+      </div>
+      <div class="doc-frag flex flex-col gap-6">
+        <h2>Últimos capítulos</h2>
+
+        <ul class="space-y-6 max-h-[60vh] overflow-y-auto pr-2 pb-4">
+          {
+            capitulos.slice(0, 3).map((capitulo) => (
+              <li class="group">
+                <a
+                  href={capitulo.url}
+                  class="block p-4 transition-all duration-300 bg-[--bg-main]/60 hover:bg-[--bg-main]/80 border border-[--border] hover:border-[--accent]/50 hover:shadow-lg"
+                >
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <h2 class="text-xl font-medium text-[--accent] group-hover:text-[--accent-strong] transition-colors">
+                        {capitulo.titulo}
+                      </h2>
+                      <p class="text-sm text-[--text-muted] mt-1">
+                        {capitulo.subtitulo}
+                      </p>
+                    </div>
+                    <span class="text-[--accent-strong] opacity-0 group-hover:opacity-100 transition-opacity">
+                      →
+                    </span>
                   </div>
-                  <span class="text-[--accent-strong] opacity-0 group-hover:opacity-100 transition-opacity">
-                    →
-                  </span>
-                </div>
-              </a>
-            </li>
-          ))
-        }
-      </ul>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
       <div class="mt-12 pt-6 border-t border-[--border] text-center">
         <p class="text-[--text-muted] text-sm">
           Más capítulos y relatos en desarrollo. Vuelve pronto para nuevas

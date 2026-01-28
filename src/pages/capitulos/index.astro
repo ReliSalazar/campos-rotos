@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { relatos } from "../../data/relatos.js";
+import { capitulos } from "../../data/capitulos.js";
 ---
 
 <BaseLayout>
@@ -8,22 +8,22 @@ import { relatos } from "../../data/relatos.js";
     <div
       class="bg-[--bg-panel] border border-[--border] rounded-xl shadow-xl p-8 md:p-10"
     >
-      <div class="chapter-title">Todos los Relatos</div>
+      <div class="chapter-title">Todos los Capitulos</div>
       <ul class="doc-frag space-y-6 max-h-80 overflow-y-auto pr-2 pb-4">
         {
-          relatos.map((relato) => (
+          capitulos.map((capitulo) => (
             <li class="group">
               <a
-                href={relato.url}
+                href={capitulo.url}
                 class="block p-4 transition-all duration-300 bg-[--bg-main]/60 hover:bg-[--bg-main]/80 border border-[--border] hover:border-[--accent]/50 hover:shadow-lg"
               >
                 <div class="flex items-center justify-between">
                   <div>
                     <h2 class="text-xl font-medium text-[--accent] group-hover:text-[--accent-strong] transition-colors">
-                      {relato.titulo}
+                      {capitulo.titulo}
                     </h2>
                     <p class="text-sm text-[--text-muted] mt-1">
-                      {relato.subtitulo}
+                      {capitulo.subtitulo}
                     </p>
                   </div>
                   <span class="text-[--accent-strong] opacity-0 group-hover:opacity-100 transition-opacity">
