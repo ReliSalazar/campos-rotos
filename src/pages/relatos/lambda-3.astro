@@ -1,6 +1,5 @@
 ---
 import PostLayout from "../../layouts/PostLayout.astro";
-import Terminal from "../../components/Terminal.svelte";
 
 const lines = [
   {
@@ -400,7 +399,5 @@ const lines = [
         </p>
       </div>
     </header>
-
-    <Terminal client:load lines={lines} lastPrompt />
   </div>
 </PostLayout>
